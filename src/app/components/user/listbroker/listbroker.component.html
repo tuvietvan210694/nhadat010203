@@ -1,0 +1,88 @@
+<mat-tab-group dynamicHeight="true">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Tất cả bài đăng
+    </ng-template>
+    <h1 id="sum" style="display: none;">{{number}}</h1>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách người môi giới</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+          <a routerLink="../addlistbroker" class="btn2">Thêm môi giới</a>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Họ tên</th>
+                <th>Tài khoản</th>
+                <th>Ngày sinh</th>
+                <th>Thông tin đồng đủ</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="brokers">
+              <tr *ngFor="let eachBroker of brokers">
+                <td>{{eachBroker.id}}</td>
+                <td>{{eachBroker.nameBroker}}</td>
+                <td>{{eachBroker.email}}</td>
+                <td>{{eachBroker.dateOfBirth}}</td>
+                <td>
+                  <a routerLink="../editlistbroker/{{eachBroker.id}}">Sửa</a>
+                  <a routerLink="../detaillistbroker/{{eachBroker.id}}">Chi tiết</a>
+                  <!--routerLink="/detaillistbroker" // (click)="onSelect(eachBroker)"-->
+                  <button (click)="delete(eachBroker.id)">X</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!--<div *ngIf="selectedBroker">
+        <h3>Name: {{selectedBroker.name}}</h3>
+      </div>-->
+          <div class="content_detail_bottom_page">
+            <!--<ul class="phantrang">
+          <a href="" title="">
+            <li id="phantrang_first">
+              <<</li> </a> <a href="" title="">
+            <li>1</li>
+          </a>
+          <a href="" title="">
+            <li>2</li>
+          </a>
+          <a href="" title="">
+            <li>3</li>
+          </a>
+          <a href="" title="">
+            <li>4</li>
+          </a>
+          <a href="" title="">
+            <li id="phantrang_last">>></li>
+          </a>
+        </ul>-->
+            <ul class="phantrang">
+              <li *ngFor="let p of pages; let i=index" style = "margin-bottom: 5px;">
+                <a href="#" (click)="setPage(i+1,$event)">{{i+1}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<app-detaillistbroker [broker]="selectedBroker" ></app-detaillistbroker>-->
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Tìm kiếm
+    </ng-template>
+    <app-searchlistbroker></app-searchlistbroker>
+  </mat-tab>
+</mat-tab-group>

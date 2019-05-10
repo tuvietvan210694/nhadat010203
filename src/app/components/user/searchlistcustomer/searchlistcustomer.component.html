@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <h4>Tìm kiếm Customers</h4>
+      <form class="content_detail_top_form">
+        <input type="text" #searchBox (keyup)="search(searchBox.value)" placeholder="Search...">&nbsp;
+        <!-- <input type="submit" name="submit" value="Search"> -->
+      </form>
+    </div>
+    <div class="content_detail_bottom">
+      <table class="danhsach">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Ngày sinh</th>
+            <th>Thông tin đồng đủ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers$ | async ">
+            <td>{{customer.id}}</td>
+            <td>{{customer.nameCustomer}}</td>
+            <td>{{customer.dayOfBirth}}</td>
+            <td>
+              <a routerLink="../editlistcustomer/{{customer.id}}">Sửa</a>
+              <a routerLink="../detaillistcustomer/{{customer.id}}">Chi tiết</a>
+              <button (click)="delete(customer.id)">X</button>
+              <a routerLink="../detaillistcustomersearch/{{customer.id}}">Chỉ định</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

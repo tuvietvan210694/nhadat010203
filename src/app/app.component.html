@@ -1,0 +1,69 @@
+<!-- <div class="phucoccho">
+    <ul>
+        <li><a routerLink="">Public</a></li>
+        <li><a routerLink="login">Login</a></li>
+        <li><a routerLink="register">Register</a></li>
+        <li><a routerLink="admin">Admin</a></li>
+        <li><a routerLink="broker">Broker</a></li>
+    </ul>
+</div>
+<router-outlet></router-outlet> -->
+
+
+
+<nav class="navbar navbar-inverse header">
+  <div class="container-fluid">
+    <!-- <app-bar-broker class = "bar-broker" id = "bar-broker" *ngIf="authority === 'broker'" style = "display: none;"></app-bar-broker> -->
+    <!-- <app-bar-admin id = "bar-admin" *ngIf="authority === 'admin'" style = "display: none;"></app-bar-admin> -->
+     <div class="navbar-header">
+      <!-- <a class="navbar-brand" href="#">Logout</a> -->
+      <button *ngIf="authority === 'admin'" class="navbar-brand btn btn-secondary" (click) = "logout()">Logout</button>
+      <button *ngIf="authority === 'broker'" class="navbar-brand btn btn-secondary" (click) = "logout()">Logout</button>
+    </div>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <!-- <li class="nav-item" *ngIf="!authority"><a class="nav-link" routerLink="home">Home</a></li> -->
+       <li class="nav-item" *ngIf="!authority"><a class="nav-link" href="#" routerLink = "/public">Home</a></li>
+       
+       <li class="nav-item" *ngIf="!authority"><a class="nav-link" href="#" routerLink = "/publicSearch">Search</a></li>
+
+      <li *ngIf="authority === 'user'" class="nav-item">
+        <a class="nav-link" routerLink="/user">User Board</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="/admin" (click) = "clickAdmin()">Admin Board</a>
+      </li>
+      <li *ngIf="authority === 'broker'" class="nav-item">
+        <a class="nav-link broker" id = "broker" routerLink="/broker" (click) = "clickBroker()">Broker Board</a>
+      </li>
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+        <!-- <a class="nav-link" routerLink="auth/login">Login</a> -->
+      </li>
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="/signup">Signup</a>
+        <!-- <a class="nav-link" routerLink="auth/login">Login</a> -->
+      </li>
+     </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+    <!-- 
+      <li *ngIf="authority === 'user'" class="nav-item">
+        <a class="nav-link" routerLink="/user">User Board</a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item">
+        <a class="nav-link" routerLink="/admin">Admin Board</a>
+      </li>
+      <li *ngIf="authority === 'broker'" class="nav-item">
+        <a class="nav-link" routerLink="/pm">Broker Board</a>
+      </li>
+      <li *ngIf="!authority" class="nav-item">
+        <a class="nav-link" routerLink="auth/login">Login</a>
+      </li>
+    
+  <router-outlet></router-outlet>
+ -->

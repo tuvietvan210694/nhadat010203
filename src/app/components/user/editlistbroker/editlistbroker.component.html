@@ -1,0 +1,114 @@
+<div class="content" *ngIf="broker">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg1" *ngIf="broker">
+        <h4>Chỉnh sửa thông tin</h4><br>
+        <hr>
+        <form action="" method="">
+          <!--<table>
+                <tr>
+                  <td>Họ tên</td>
+                  <td><input [(ngModel)]="broker.name" type="text" name="name"></td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td><input [(ngModel)]="broker.name" type="text" name="email"></td>
+                </tr>
+                <tr>
+                  <td>Số điện thoại</td>
+                  <td><input [(ngModel)]="broker.name" type="text" name="numberphone"></td>
+                </tr>
+                <tr>
+                  <td>Ngày sinh</td>
+                  <td>
+                    <input type="date" name="date">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Giới tính</td>
+                  <td>
+                    <select name="sex">
+                      <option value="">...</option>
+                      <option value=true>Nam</option>
+                      <option value=false>Nữ</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Địa chỉ</td>
+                  <td><input [(ngModel)]="broker.name" type="text" name="address"></td>
+                </tr>
+                <tr>
+                  <td><input type="submit" (click)="save()" value="Sửa"></td>
+                  <td><input type="reset" value="Reset"></td>
+                </tr>
+              </table>-->
+          <table>
+            <tr>
+              <td>Email</td>
+              <td><input [(ngModel)]="broker.email" type="text" name="email" disabled></td>
+            </tr>
+            <tr>
+              <td>Họ tên</td>
+              <td><input [(ngModel)]="broker.nameBroker" type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td>Số điện thoại</td>
+              <td><input [(ngModel)]="broker.phoneNumber" type="text" name="numberphone"></td>
+            </tr>
+            <tr>
+              <td>Ngày sinh</td>
+              <td>
+                <input [(ngModel)]="broker.dateOfBirth" type="date" name="date">
+              </td>
+            </tr>
+            <tr>
+              <td>Giới tính</td>
+              <td>
+                <select [(ngModel)]="broker.gender" name="sex">
+                    <option value="true">Nam</option>
+                    <option value="false">Nữ</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Active</td>
+              <td>
+                <select [(ngModel)]="broker.active" name="active">
+                    <option value="true">Có</option>
+                    <option value="false">Không</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+                <td>nonDel</td>
+                <td>
+                  <select [(ngModel)]="broker.nonDel" name="active">
+                      <option value="true">Có</option>
+                      <option value="false">Không</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>nonBlock</td>
+                <td>
+                  <select [(ngModel)]="broker.nonBlock" name="nonBlock">
+                      <option value="true">Có</option>
+                      <option value="false">Không</option>
+                  </select>
+                </td>
+              </tr>
+            <tr>
+              <td>Địa chỉ</td>
+              <td><input [(ngModel)]="broker.address" type="text" name="address"></td>
+            </tr>
+            <tr>
+              <td><input type="submit" (click)="save()" value="Sửa"></td>
+              <td><input type="reset" value="Reset"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

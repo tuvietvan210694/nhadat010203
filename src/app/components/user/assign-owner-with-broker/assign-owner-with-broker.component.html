@@ -1,0 +1,81 @@
+<div class="all">
+  <div class="content">
+    <div class="formlg" style = "width: 680px; background-color: #ccc; height: 350px; margin-bottom: 50px;">
+      <h3 style = "color: grey; margin-top: 30px;">Assign Broker With Owner</h3>
+       <form (ngSubmit)="heroForm.form.valid && assignBrokerWithOwner(brokerId.value, ownerId.value)" #heroForm="ngForm" name = "form">
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger">
+           {{mess}}
+        </div>
+
+          <div class="form-group">
+
+            <div>
+              <label for="ownerName" style = "color: grey;">Owner Name: </label>
+              <input type="text" class="form-control" name="ownerName"  [(ngModel)]="owner.ownerName" #ownerName="ngModel" required minlength="3" style = "margin-left: 50px;"/>
+               
+               <!-- <span *ngIf="ownerName.invalid">
+                  <span *ngIf="ownerName.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">ownerName is required</span>
+                  <span *ngIf="ownerName.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">ownerName do dai phai it nhat 7 ki tu</span>
+               </span> -->
+
+            </div>
+
+            <div>
+              <label for="idCard" style = "color: grey;">idCard: </label>
+              <input type="text" class="form-control" name="idCard"  [(ngModel)]="owner.idCard" #idCard="ngModel" required minlength="7" style = "margin-left: 103px;" disabled/>
+               <!-- <span *ngIf="idCard.invalid">
+                  <span *ngIf="idCard.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">idCard is required</span>
+                  <span *ngIf="idCard.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">idCard do dai phai it nhat 7 ki tu</span>
+               </span> -->
+            </div>
+
+            <!-- <div>
+              <label for="phoneNumber" style = "color: grey;">phoneNumber: </label>
+              <input type="text" class="form-control" name="phoneNumber"  [(ngModel)]="heroForm.form.phoneNumber" #phoneNumber="ngModel" required minlength="7" style = "margin-left: 103px;"/>
+               <span *ngIf="phoneNumber.invalid">
+                  <span *ngIf="phoneNumber.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber is required</span>
+                  <span *ngIf="phoneNumber.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div> -->
+
+            <!-- <div>
+              <label for="address" style = "color: grey;">Address: </label>
+              <input type="text" class="form-control" name="address"  [(ngModel)]="heroForm.form.address" #address="ngModel" required minlength="7" style = "margin-left: 103px;"/>
+               <span *ngIf="address.invalid">
+                  <span *ngIf="address.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">address is required</span>
+                  <span *ngIf="address.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">address do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+ -->
+              <div>
+                <label for="broker" style = "color: grey;">Broker: </label>
+                <select name="sex" #brokerId  style = "width: 18.5vw; margin-left: 101px; height: 3.5vw;">
+                <!-- <option value="true" selected>Nam</option>
+                <option value="false">Nữ</option> -->
+                <option *ngFor="let eachBroker of brokers" value = "eachBroker.id" [value]="eachBroker.id">{{eachBroker.id}}-{{eachBroker.nameBroker}}</option>
+              </select>
+              </div>
+
+
+              <div>
+                <label for="Owner Id" style = "color: grey;">Owner Id: </label>
+                <select name="ownerId" #ownerId  style = "width: 18.5vw; margin-left: 101px; height: 3.5vw;">
+                <option *ngIf="owner" value = "owner.id" [value]="owner.id">{{owner.id}}-{{owner.ownerName}}</option>
+              </select>
+              </div>
+
+          <br>
+          <br>
+          <button style = "margin-left: 258px;" type="submit" class="btn btn-success">Submit</button>
+    
+        <br>
+        <br>
+          </div>
+
+      </form>
+     
+    </div>
+  </div>
+</div>
+
+

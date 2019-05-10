@@ -1,0 +1,37 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <h4>Tìm kiếm người môi giới</h4>
+      <form class="content_detail_top_form">
+        <input type="text" #searchBox (keyup)="search(searchBox.value)" placeholder="Search...">&nbsp;
+        <!-- <input type="submit" name="submit" value="Search"> -->
+      </form>
+    </div>
+    <div class="content_detail_bottom">
+      <table class="danhsach">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Tài khoản</th>
+            <th>Ngày sinh</th>
+            <th>Thông tin đồng đủ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let broker of brokers$ | async ">
+            <td>{{broker.id}}</td>
+            <td>{{broker.nameBroker}}</td>
+            <td>{{broker.email}}</td>
+            <td>{{broker.dateOfBirth}}</td>
+            <td>
+              <a routerLink="../editlistbroker/{{broker.id}}">Sửa</a>
+              <a routerLink="../detaillistbroker/{{broker.id}}">Chi tiết</a>
+              <button (click)="delete(broker.id)">X</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

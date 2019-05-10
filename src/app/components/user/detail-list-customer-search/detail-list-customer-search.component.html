@@ -1,0 +1,332 @@
+<!-- <div class="content" *ngIf="customer">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+        <h4>Chi tiết khách hàng</h4><br>
+        <hr>
+        <form>
+          <table>
+            <tr>
+              <td>ID: </td>
+              <td>{{customer.id}}</td>
+            </tr>
+            <tr>
+              <td>idCard: </td>
+              <td>{{customer.idCard}}</td>
+            </tr>
+            <tr>
+              <td>Họ tên: </td>
+              <td>{{customer.nameCustomer}}</td>
+            </tr>
+            <tr>
+              <td>Số điện thoại: </td>
+              <td>{{customer.phoneNumber}}</td>
+            </tr>
+            <tr>
+              <td>Ngày sinh: </td>
+              <td>{{customer.dayOfBirth}}</td>
+            </tr>
+            <tr>
+              <td>Mô tả: </td>
+              <td>{{customer.description}}</td>
+            </tr>
+            <tr>
+              <td><a routerLink="../../editlistcustomer/{{customer.id}}" class="btn2">Sửa</a></td>
+              <td><a (click)="delete(customer.id)" class="btn2">Xóa</a></td>
+            </tr>
+          </table>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input id="name" class="form-control"
+      formControlName="name" required > -->
+
+<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="all">
+  <div class="content">
+    <div class="formlg" style = "width: 680px;">
+      <br>
+      <h2 style = "margin-left: 340px; color: blue;">Thêm bài đăng cuối cùng</h2>
+       <!-- <form (ngSubmit)="heroForm.form.valid && addPostByAdmin(idCard.value, nameCustomer.value, phoneNumber.value, dayOfBirth.value, description.value, idProduct.value, brokerId.value)" #heroForm="ngForm" name = "form"> -->
+        <!-- <form style = "width: 900px;" (ngSubmit)="heroForm.form.valid && addPostByAdminFinal(id.value, idProduct.value, brokerId.value)" #heroForm="ngForm" name = "form">
+          <br>
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger">
+           {{mess}}
+        </div>
+ -->
+          <form style = "width: 900px;" (ngSubmit)="heroForm.form.valid && addPostByAdminFinal(id.value, idProduct.value, brokerId.value)" #heroForm="ngForm" name = "form">
+          <br>
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger">
+           {{mess}}
+        </div>
+
+
+          <div class="form-group">
+
+            <!-- <div>
+              <label for="idCard" style = "margin-left: 150px; color: grey;">Id Card(*):</label>
+              <input type="text" class="form-control" name="idCard"  [(ngModel)]="heroForm.form.idCard" #idCard = "ngModel" required minlength="3" style = "margin-left: 100px;"/> -->
+               <!-- <span *ngIf="idCard.invalid">
+                  <span *ngIf="idCard.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">idCard is required</span>
+                  <span *ngIf="idCard.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">idCard do dai phai it nhat 7 ki tu</span>
+               </span> -->
+            <!-- </div> -->
+ 
+            <!-- <div>
+              <label for="nameCustomer" style = "margin-left: 150px; color: grey;">Name Customer(*):</label>
+              <input type="text" class="form-control" name="nameCustomer"  [(ngModel)]="heroForm.form.nameCustomer" #nameCustomer="ngModel" required minlength="3" style = "margin-left: 22px;"/>
+               <span *ngIf="nameCustomer.invalid">
+                  <span *ngIf="nameCustomer.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">nameCustomer is required</span>
+                  <span *ngIf="nameCustomer.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">nameCustomer do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div> -->
+
+            <!-- <div>
+              <label for="phoneNumber" style = "margin-left: 150px; color: grey;">Phone Number(*):</label>
+              <input type="text" class="form-control" name="phoneNumber"  [(ngModel)]="heroForm.form.phoneNumber" #phoneNumber="ngModel" required minlength="3" style = "margin-left: 30px;"/>
+               <span *ngIf="phoneNumber.invalid">
+                  <span *ngIf="phoneNumber.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber is required</span>
+                  <span *ngIf="phoneNumber.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div> -->
+
+            <!-- <div>
+              <label for="dayOfBirth" style = "margin-left: 150px; color: grey;">DateOfBirth(*): </label>
+              <input type="date" class="form-control" name="dayOfBirth"  [(ngModel)]="heroForm.form.dayOfBirth" #dayOfBirth="ngModel" required minlength="7" style = "margin-left: 55px;"/>
+               <span *ngIf="dayOfBirth.invalid">
+                  <span *ngIf="dayOfBirth.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">dayOfBirth is required</span>
+                  <span *ngIf="dayOfBirth.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">dayOfBirth do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <div>
+              <label for="id" style = "margin-left: 150px; color: grey;">Id</label>
+              <input type="text" class="form-control" name="id"  [(ngModel)]="customer.id" #id="ngModel" required  style = "margin-left: 56px;"/>
+               <span *ngIf="id.invalid">
+                  <span *ngIf="id.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">id is required</span>
+                  <span *ngIf="id.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">id do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+            <div>
+              <label for="idCard" style = "margin-left: 150px; color: grey;">Id Card</label>
+              <input type="text" class="form-control" name="idCard"  [(ngModel)]="customer.idCard" #idCard="ngModel" required  style = "margin-left: 56px;" disabled="true" />
+
+
+               <span *ngIf="idCard.invalid">
+                  <span *ngIf="idCard.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">idCard is required</span>
+                  <span *ngIf="idCard.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">idCard do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+
+            <div>
+                <label for="idProduct" style = "margin-left: 150px; color: grey;">Id Product(*): </label>
+                <select name="idProduct" #idProduct style= "width: 18.5vw; margin-left: 64px; height: 4vw;" >
+                    <option *ngFor = "let productFinal of listPostFinals" value = "productFinal.id" [value]="productFinal.id" >{{productFinal.id}} -- {{productFinal.productName}}</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="brokerId" style = "margin-left: 150px; color: grey;">Id Broker(*): </label>
+                <select name="brokerId" #brokerId style = "width: 18.5vw; margin-left: 73px; height: 4vw;" >
+                    <option *ngFor = "let broker of listBrokers" value="broker.id" [value] = "broker.id">{{broker.id}}--{{broker.nameBroker}}</option>
+                </select>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div>
+              <label for="email">Email: </label>
+              <input type="text" class="form-control" name="email"  [(ngModel)]="heroForm.form.email" #email="ngModel" required minlength="3" style = "margin-left: 99px;"/>
+               <span *ngIf="email.invalid">
+                  <span *ngIf="email.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Email is required</span>
+                  <span *ngIf="email.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Email do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Name: </label>
+              <input type="text" class="form-control" name="name"  [(ngModel)]="heroForm.form.name" #name="ngModel" required minlength="7" style = "margin-left: 96px;"/>
+               <span *ngIf="name.invalid">
+                  <span *ngIf="name.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Name is required</span>
+                  <span *ngIf="name.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Name do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Address: </label>
+              <input type="text" class="form-control" name="address"  [(ngModel)]="heroForm.form.address" #address="ngModel" required minlength="7" style = "margin-left: 74px;"/>
+               <span *ngIf="address.invalid">
+                  <span *ngIf="address.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Address is required</span>
+                  <span *ngIf="address.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Address do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">DateOfBirth: </label>
+              <input type="date" class="form-control" name="date"  [(ngModel)]="heroForm.form.date" #date="ngModel" required minlength="7" style = "margin-left: 45px;"/>
+               <span *ngIf="date.invalid">
+                  <span *ngIf="date.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth is required</span>
+                  <span *ngIf="date.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Phone Number: </label>
+              <input type="text" class="form-control" name="phonenumber"  [(ngModel)]="heroForm.form.phonenumber" #phonenumber="ngModel" required minlength="7" style = "margin-left: 16px;"/>
+               <span *ngIf="phonenumber.invalid">
+                  <span *ngIf="phonenumber.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Phonenumber is required</span>
+                  <span *ngIf="phonenumber.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Phonenumber sai do dai </span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Password: </label>
+              <input type="password" class="form-control" style = "width: 17vw; margin-left: 57px;" name="password"  [(ngModel)]="heroForm.form.password" #password="ngModel" required minlength="7" />
+               <span *ngIf="password.invalid">
+                  <span *ngIf="password.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Password is required</span>
+                  <span *ngIf="password.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Password do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Confirm: </label>
+              <input type="password" class="form-control" style = "width: 17vw; margin-left: 72px;" name="confirmpassword"  [(ngModel)]="heroForm.form.confirmpassword" #confirmpassword="ngModel" required minlength="7" />
+               <span *ngIf="confirmpassword.invalid">
+                  <span *ngIf="confirmpassword.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm is required</span>
+                  <span *ngIf="confirmpassword.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm do dai</span>
+               </span>
+              </div>
+ -->
+
+
+          <br>
+          <br>
+          <button style = "margin-left: 395px;" type="submit" class="btn btn-success">Submit</button>
+          
+        <!-- <div *ngIf="heroForm.submitted" class="alert alert-danger">
+          Login successful: {{mess}}
+        </div>
+ -->
+
+        <br>
+        <br>
+          </div>
+
+        <!-- <table>
+          <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" #email placeholder="Nhập email..." required></td>
+            <td *ngIf="email.invalid">
+                <span *ngIf="email.errors.required">Email is required</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Tên</td>
+            <td><input type="text" name="name" #name placeholder="Nhập tên..."></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" name="address" #address placeholder="Nhập địa chỉ..."></td>
+          </tr>
+          <tr>
+            <td>Ngày sinh</td>
+            <td>
+              <input type="date" name="date" #date placeholder="Nhập ngày sinh...">
+            </td>
+          </tr>
+          <tr>
+            <td>Số điện thoại</td>
+            <td><input type="text" name="numberphone" #phonenumber placeholder="Nhập số điện thoại..."></td>
+          </tr>
+          <tr>
+            <td>Giới tính</td>
+            <td>
+              <select name="sex" #sex>
+                <option value="">Chọn giới tính</option>
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Mật khẩu</td>
+            <td><input type="password" name="pass" #password placeholder="Nhập mật khẩu..."></td>
+          </tr>
+          <tr>
+            <td>Xác nhận mật khẩu</td>
+            <td><input type="password" name="confirmpass" #confirmpassword placeholder="Xác nhận mật khẩu..."></td>
+          </tr>
+          <tr>
+
+             <button type="submit" class="btn btn-success">Submit</button> -->
+            <!-- <td><button (click) = "signup(email.value, name.value, address.value, date.value, phonenumber.value, sex.value, password.value, confirmpassword.value)">Sign up</button></td> -->
+            <!-- <td><button>Reset</button></td> -->
+          <!-- </tr>
+        </table> -->
+      </form>
+     
+    </div>
+  </div>
+</div>

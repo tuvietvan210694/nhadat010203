@@ -1,0 +1,291 @@
+<mat-tab-group dynamicHeight="true">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Tất cả bài đăng
+    </ng-template>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách bài đăng</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+          <a routerLink="../addpostfinalbyadmin" class="btn2">Thêm bài đăng</a>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Vị trí</th>
+                <th>Diện tích(m2)</th>
+                <th>Giá(VNĐ)</th>
+                <th>Thông tin cụ thể</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="postsAll">
+              <tr *ngFor="let eachPost1 of postsAll">
+                <td>{{eachPost1.id}}</td>
+                <td>{{eachPost1.productName}}</td>
+                <td>{{eachPost1.productLocation}}</td>
+                <td>{{eachPost1.productAcreage}}</td>
+                <td>{{eachPost1.productCost}}</td>
+                <td>
+                  <a routerLink="../detaillistposts/{{eachPost1.id}}">Chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="content_detail_bottom_page">
+            <ul class="phantrang">
+              <a href="" title="">
+                <li id="phantrang_first">
+                  <<</li> </a> <a href="" title="">
+                <li>1</li>
+              </a>
+              <a href="" title="">
+                <li>2</li>
+              </a>
+              <a href="" title="">
+                <li>3</li>
+              </a>
+              <a href="" title="">
+                <li>4</li>
+              </a>
+              <a href="" title="">
+                <li id="phantrang_last">>></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Đã phê duyệt
+    </ng-template>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách bài đăng</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Vị trí</th>
+                <th>Diện tích(m2)</th>
+                <th>Giá(VNĐ)</th>
+                <th>Thông tin cụ thể</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="postsApproved">
+              <tr *ngFor="let eachPost2 of postsApproved">
+                <td>{{eachPost2.id}}</td>
+                <td>{{eachPost2.productName}}</td>
+                <td>{{eachPost2.productLocation}}</td>
+                <td>{{eachPost2.productAcreage}}</td>
+                <td>{{eachPost2.productCost}}</td>
+                <td>
+                  <a routerLink="../detaillistposts/{{eachPost2.id}}">Chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="content_detail_bottom_page">
+            <ul class="phantrang">
+              <a href="" title="">
+                <li id="phantrang_first">
+                  <<</li> </a> <a href="" title="">
+                <li>1</li>
+              </a>
+              <a href="" title="">
+                <li>2</li>
+              </a>
+              <a href="" title="">
+                <li>3</li>
+              </a>
+              <a href="" title="">
+                <li>4</li>
+              </a>
+              <a href="" title="">
+                <li id="phantrang_last">>></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      Chưa phê duyệt
+    </ng-template>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách bài đăng</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Vị trí</th>
+                <th>Diện tích(m2)</th>
+                <th>Giá(VNĐ)</th>
+                <th>Thông tin cụ thể</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="postsPending">
+              <tr *ngFor="let eachPost3 of postsPending">
+                <td>{{eachPost3.id}}</td>
+                <td>{{eachPost3.productName}}</td>
+                <td>{{eachPost3.productLocation}}</td>
+                <td>{{eachPost3.productAcreage}}</td>
+                <td>{{eachPost3.productCost}}</td>
+                <td>
+                  <a routerLink="../detaillistposts/{{eachPost3.id}}">Chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="content_detail_bottom_page">
+            <ul class="phantrang">
+              <a href="" title="">
+                <li id="phantrang_first">
+                  <<</li> </a> <a href="" title="">
+                <li>1</li>
+              </a>
+              <a href="" title="">
+                <li>2</li>
+              </a>
+              <a href="" title="">
+                <li>3</li>
+              </a>
+              <a href="" title="">
+                <li>4</li>
+              </a>
+              <a href="" title="">
+                <li id="phantrang_last">>></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+
+
+
+
+<mat-tab>
+    <ng-template mat-tab-label>
+      Đã thanh toán với khách hàng
+    </ng-template>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách bài đăng</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên sản phẩm</th>
+                <th>Vị trí</th>
+                <th>Diện tích(m2)</th>
+                <th>Giá(VNĐ)</th>
+                <th>Thông tin cụ thể</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="postsMoney">
+              <tr *ngFor="let eachPost3 of postsMoney">
+                <td>{{eachPost3.id}}</td>
+                <td>{{eachPost3.productName}}</td>
+                <td>{{eachPost3.productLocation}}</td>
+                <td>{{eachPost3.productAcreage}}</td>
+                <td>{{eachPost3.productCost}}</td>
+                <td>
+                  <a routerLink="../detaillistposts/{{eachPost3.id}}">Chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="content_detail_bottom_page">
+            <ul class="phantrang">
+              <a href="" title="">
+                <li id="phantrang_first">
+                  <<</li> </a> <a href="" title="">
+                <li>1</li>
+              </a>
+              <a href="" title="">
+                <li>2</li>
+              </a>
+              <a href="" title="">
+                <li>3</li>
+              </a>
+              <a href="" title="">
+                <li>4</li>
+              </a>
+              <a href="" title="">
+                <li id="phantrang_last">>></li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mat-tab-group>

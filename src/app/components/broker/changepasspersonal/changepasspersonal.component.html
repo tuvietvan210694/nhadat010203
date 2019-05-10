@@ -1,0 +1,73 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg1" style = "width: 850px;">
+      <h4>Đổi mật khẩu</h4><br><hr>
+      <!-- <form action="" method="">
+        <table>
+          <tr>
+            <td>Mật khẩu cũ</td>
+            <td><input type="password" name="pass_old"></td>
+          </tr>
+          <tr>
+            <td>Mật khẩu mới</td>
+            <td><input type="password" name="pass_new"></td>
+          </tr>
+          <tr>
+            <td>Xác nhận mật khẩu</td>
+            <td><input type="password" name="pass_confirm"></td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="OK"></td>
+            <td><input type="reset" value="Reset"></td>
+          </tr>
+        </table>
+      </form> -->
+
+      <form (ngSubmit)="heroForm.form.valid && changePassword(passwordCurrent.value, newPassword.value, newMatchingPassword.value)" #heroForm="ngForm" name = "form">
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger">
+           {{mess}}
+        </div>
+        <div *ngIf="heroForm.submitted && isLoginFailed" class="alert alert-danger">
+           {{errorMessage}}
+        </div>
+
+
+          <div class="form-group">
+            <div>
+              <label for="passwordCurrent">PasswordCurrent(*): </label>
+              <input type="text" class="form-control" name="passwordCurrent"  [(ngModel)]="heroForm.form.passwordCurrent" #passwordCurrent="ngModel" required minlength="3" style = "margin-left: 70px;"/>
+               <span *ngIf="passwordCurrent.invalid">
+                  <span *ngIf="passwordCurrent.errors.required" style = "color: red; margin-left: 10px;">PasswordCurrent is required</span>
+                  <span *ngIf="passwordCurrent.errors.minlength" style = "color: red; margin-left: 10px;">PasswordCurrent do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+            <div>
+              <label for="newPassword">NewPassword(*): </label>
+              <input type="text" class="form-control" name="newPassword"  [(ngModel)]="heroForm.form.newPassword" #newPassword="ngModel" required minlength="3" style = "margin-left: 96px;"/>
+               <span *ngIf="newPassword.invalid">
+                  <span *ngIf="newPassword.errors.required" style = "color: red; margin-left: 10px;">NewPassword is required</span>
+                  <span *ngIf="newPassword.errors.minlength" style = "color: red; margin-left: 10px;">NewPassword do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+            <div>
+              <label for="newMatchingPassword">NewMatchingPassword(*): </label>
+              <input type="text" class="form-control" name="newMatchingPassword"  [(ngModel)]="heroForm.form.newMatchingPassword" #newMatchingPassword="ngModel" required minlength="3" style = "margin-left: 20px;"/>
+               <span *ngIf="newMatchingPassword.invalid">
+                  <span *ngIf="newMatchingPassword.errors.required" style = "color: red; margin-left: 10px;">NewMatchingPassword is required</span>
+                  <span *ngIf="newMatchingPassword.errors.minlength" style = "color: red; margin-left: 10px;">NewMatchingPassword do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+            <br>
+            <br>
+            <button type="submit" class="btn btn-success">Submit</button>
+
+          </div>
+         </form> 
+      </div>
+    </div>
+  </div>
+</div>

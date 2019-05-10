@@ -1,0 +1,98 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.all {
+	font-family: arial;
+	font-size: 17px;
+}
+.all .right {
+	margin-top: 10%;
+		margin-left: 200px;
+		top: 0;
+		left: 0;
+		position: absolute   ;
+		width: 85%;
+		background: #B0C4DE;
+}
+
+.active {
+	background: #bfbfbf;
+	border-radius:30px;
+}
+.btn {
+	text-decoration: none;
+  	background-color: green;
+  	color: white;
+ 	padding: 8px 16px;
+  	border-radius: 10px;
+  	border: 0px;
+  	text-align: center;
+  	-webkit-box-shadow: 9px 9px 7px -1px rgba(31,31,41,0.57);
+	-moz-box-shadow: 9px 9px 7px -1px rgba(31,31,41,0.57);
+	box-shadow: 9px 9px 7px -1px rgba(31,31,41,0.57);
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+#menu-trigger {
+  display: none;
+}
+@media only screen and (max-width: 992px)  {
+	#menu-trigger {
+		background-color:#26272b;
+		padding: 10px;
+		color: #F2F2F2;
+		text-align: right;
+		padding-right: 20%;
+		display: block;
+	  }
+	  .all .right {
+		  margin-left: 0px;
+		  float: right;
+		  width:100%;
+	  }
+}

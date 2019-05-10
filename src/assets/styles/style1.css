@@ -1,0 +1,28 @@
+body {
+  font-size: 13px;
+  /*1rem = 16px*/
+}
+ .container {
+  width: 1240px;
+  margin: 0 auto;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+.page-header {
+  width: 100%;
+}
+.section-logo>a>image{
+  width: 315px;
+}
+.header-right {
+  float: right;
+  margin: auto 0;
+}
+

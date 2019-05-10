@@ -1,0 +1,142 @@
+
+
+
+
+<!-- <form name="form" #f="ngForm" novalidate> -->
+      <!-- <form (ngSubmit)="heroForm.form.valid && onSubmit1()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="postApproved.productName" #username="ngModel"
+          required minlength="7" />
+        <div *ngIf="username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">Username do dai phai it nhat 7 ki tu</div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </form>
+
+      <br>
+      -->
+
+
+
+
+
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+      <h4 style = "color: #007700; font-size: 18px; margin-left: 20px;">Chi tiết lô đất</h4><br>
+      <form>
+        <table *ngIf = "postApproved">
+
+
+
+         <!--  <input id="name" name="name" class="form-control"
+      required minlength="4" appForbiddenName="bob"
+      [(ngModel)]="postApproved.productName" #name="ngModel" style = "background-color: grey; color: white;"> -->
+
+<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+
+</div>
+<br>
+<br>
+<br>
+ <button class="btn btn-primary">Login</button>
+ <br>
+ <br> -->
+
+
+
+      
+      
+      <!-- <div class="form-group">
+        <button class="btn btn-primary">Login</button> -->
+        <!-- <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          Login failed: {{errorMessage}}
+        </div> -->
+      <!-- </div> -->
+
+<!-- </form>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <tr>
+            <td style = "color: #440000;">Id: </td>
+            <td>{{postApproved.id}}</td>
+          </tr>
+          <tr>
+            <td style = "color: #440000;">Product Name:</td>
+            <td>{{ postApproved.productName }}</td>
+          </tr>
+          <tr>
+            <td style = "color: #440000;">Product Location:</td>
+            <td>{{ postApproved.productLocation }}</td>
+          </tr>
+          <tr>
+            <td style = "color: #440000;">Product Cost:</td>
+            <td>{{ postApproved.productCost }}</td>
+          </tr>
+          <tr>
+            <td style = "color: #440000;">Product Acreage:</td>
+            <td>{{ postApproved.productAcreage }}</td>
+          </tr>
+          <tr>
+            <td style = "color: #440000;">fileId</td>
+            <td>{{ postApproved.fileId }}</td>
+          </tr>
+          
+          <tr>
+            <td style = "color: #440000;">Image:</td>
+            <td><img src = "{{ postApproved.linkAnh }}" style = "width: 200px; height: 200px;"/></td>
+          </tr>
+          <tr>
+            <!-- <td><a routerLink="../editlistpostsbroker" class="btn2">Sửa</a></td>
+            <td><a href="" class="btn2">Xóa</a></td> -->
+            <td><a href="" class="btn2" (click) = "goBack();">Trở lại</a></td>
+          </tr>
+
+        </table>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>

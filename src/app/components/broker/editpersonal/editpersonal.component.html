@@ -1,0 +1,103 @@
+
+<div class="all">
+  <div class="content">
+    <br>
+    <h3 style = "margin-left: 100px; color: #007700;">Sửa thông tin cá nhân</h3>
+    <br>
+    <div class="formlg" style = "width: 680px;" *ngIf = "broker">
+       <form (ngSubmit)="heroForm.form.valid && uploadProfilePersonal()" #heroForm="ngForm" name = "form">
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger" style = "margin-left: 100px; width: 400px;">
+           {{mess}}
+        </div>
+
+
+          <div class="form-group" style = "position: relative;">
+            <div>
+              <label for="email" style = "margin-left: 100px;">Email: </label>
+              <input type="text" class="form-control" name="email"  [(ngModel)]="broker.email" #email="ngModel" required minlength="3" style = "margin-left: 99px;" disabled="true" />
+            </div>
+
+              <div>
+              <label for="nameBroker" style = "margin-left: 100px;">nameBroker: </label>
+              <input type="text" class="form-control" name="name"  [(ngModel)]="broker.nameBroker" #nameBroker="ngModel" required minlength="3" style = "margin-left: 45px;"/>
+               <span *ngIf="nameBroker.invalid">
+                  <span *ngIf="nameBroker.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">nameBroker is required</span>
+                  <span *ngIf="nameBroker.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">nameBroker do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div>
+
+              <div>
+              <label for="phoneNumber" style = "margin-left: 100px;">phoneNumber: </label>
+              <input type="text" class="form-control" name="phoneNumber"  [(ngModel)]="broker.phoneNumber" #phoneNumber="ngModel" required minlength="7" style = "margin-left: 29px;"/>
+               <span *ngIf="phoneNumber.invalid">
+                  <span *ngIf="phoneNumber.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber is required</span>
+                  <span *ngIf="phoneNumber.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">phoneNumber do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div>
+
+              <div>
+              <label for="dateOfBirth" style = "margin-left: 100px;">dateOfBirth: </label>
+              <input type="date" class="form-control" name="dateOfBirth"  [(ngModel)]="broker.dateOfBirth" #dateOfBirth="ngModel" required minlength="7" style = "margin-left: 51px;"/>
+               <span *ngIf="dateOfBirth.invalid">
+                  <span *ngIf="dateOfBirth.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">dateOfBirth is required</span>
+                  <span *ngIf="dateOfBirth.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">dateOfBirth do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div>
+
+              <!-- <div>
+              <label for="name">Phone Number: </label>
+              <input type="text" class="form-control" name="phonenumber"  [(ngModel)]="heroForm.form.phonenumber" #phonenumber="ngModel" required minlength="7" style = "margin-left: 16px;"/>
+               <span *ngIf="phonenumber.invalid">
+                  <span *ngIf="phonenumber.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Phonenumber is required</span>
+                  <span *ngIf="phonenumber.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Phonenumber sai do dai </span>
+               </span>
+              </div> -->
+
+              <div>
+                <label for="gender" style = "margin-left: 100px;">Gender: </label>
+                <select [(ngModel)]="broker.gender" name="gender" #gender style = "width: 9vw; margin-left: 86px; height: 4vw;" >
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+              </div>
+              
+                <span style = "margin-left: 100px; color: black;">Hình ảnh: </span><img src = "{{broker.linkImageProfile}}" style = "margin-left: 74px;" width="250" height = "200">
+              
+                <br>
+                <br>
+                
+                <input type="file" (change)="onFileChanged($event)" #fileInput style = "margin-left: 100px; color: red;">
+              
+<!-- 
+              <div>
+              <label for="name">Password: </label>
+              <input type="password" class="form-control" style = "width: 18vw; margin-left: 57px;" name="password"  [(ngModel)]="heroForm.form.password" #password="ngModel" required minlength="7" />
+               <span *ngIf="password.invalid">
+                  <span *ngIf="password.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Password is required</span>
+                  <span *ngIf="password.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Password do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Confirm: </label>
+              <input type="password" class="form-control" style = "width: 18vw; margin-left: 72px;" name="confirmpassword"  [(ngModel)]="heroForm.form.confirmpassword" #confirmpassword="ngModel" required minlength="7" />
+               <span *ngIf="confirmpassword.invalid">
+                  <span *ngIf="confirmpassword.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm is required</span>
+                  <span *ngIf="confirmpassword.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm do dai</span>
+               </span>
+              </div> -->
+
+
+
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success" style = "position: absolute; bottom: 37px; left: 250px;">Edit</button>
+
+        <br>
+        <br>
+          </div>
+      </form>
+     
+    </div>
+  </div>
+</div>

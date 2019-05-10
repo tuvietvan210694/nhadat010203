@@ -1,0 +1,159 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2" *ngIf = "owner">
+      <h4 style = "margin-left: 19px; color: #007700;">Thông tin của Owner</h4><hr>
+      <form>
+        <table>
+
+          <!-- id: number;
+    productName: string;
+    productLocation: string;
+    productCost: number;
+    productAcreage: number;
+    fileId: number;
+    linkAnh: string; -->
+
+
+          <tr>
+            <td style = "color: #BB0000;">Id: </td>
+            <td>{{owner.id}}</td>
+          </tr>
+          <tr>
+            <td style = "color: #BB0000;">Owner Name:</td>
+            <td>{{owner.ownerName}}</td>
+          </tr>
+          <tr>
+            <td style = "color: #BB0000;">Id Card:</td>
+            <td>{{owner.idCard}}</td>
+          </tr>
+          <tr>
+            <td style = "color: #BB0000;">Phone Number:</td>
+            <td>{{owner.phoneNumber}}</td>
+          </tr>
+          <tr>
+            <td style = "color: #BB0000;">Address:</td>
+            <td>{{owner.address}}</td>
+          </tr>
+          
+        </table>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+     <!-- id: number;
+    productName: string;
+    productLocation: string;
+    productCost: number;
+    productAcreage: number;
+    fileId: number;
+    linkAnh: string; -->
+<!-- <div class="all">
+  <div class="content">
+    <div class="formlg" style = "width: 680px;">
+      <h3>Chỉnh sửa chi tiết lô đất</h3>
+       <form #heroForm="ngForm" name = "form"> -->
+        <!-- <div *ngIf="heroForm.submitted && isLoginFailed" class="alert alert-danger">
+           {{mess}}
+        </div> -->
+
+
+          <!-- <div class="form-group" style = "position: relative;">
+            <div>
+              <label for="productName">productName: </label>
+              <input type="text" class="form-control" name="productName"  [(ngModel)]="brokerPost.productName" #productName="ngModel" required minlength="3" style = "margin-left: 99px;"/>
+               <span *ngIf="productName.invalid">
+                  <span *ngIf="productName.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productName is required</span>
+                  <span *ngIf="productName.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productName do dai phai it nhat 7 ki tu</span>
+               </span>
+            </div>
+
+              <div>
+              <label for="productLocation">productLocation: </label>
+              <input type="text" class="form-control" name="productLocation"  [(ngModel)]="brokerPost.productLocation" #name="ngModel" required minlength="7" style = "margin-left: 96px;"/>
+               <span *ngIf="productLocation.invalid">
+                  <span *ngIf="productLocation.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productLocation is required</span>
+                  <span *ngIf="productLocation.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productLocation do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+              
+
+              <!-- <div>
+              <label for="productCost">productCost: </label>
+              <input type="text" class="form-control" name="productCost"  [(ngModel)]="brokerPost.productCost" style = "margin-left: 74px;" required/>
+ -->
+               <!-- <span *ngIf="productCost.invalid">
+                  <span *ngIf="productCost.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productCost is required</span>
+                  <span *ngIf="productCost.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productCost do dai phai it nhat 7 ki tu</span>
+               </span> -->
+             <!--  </div> -->
+
+              <!-- <div>
+              <label for="name">DateOfBirth: </label>
+              <input type="date" class="form-control" name="date"  [(ngModel)]="heroForm.form.date" #date="ngModel" required minlength="7" style = "margin-left: 45px;"/>
+               <span *ngIf="date.invalid">
+                  <span *ngIf="date.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth is required</span>
+                  <span *ngIf="date.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="productAcreage">productAcreage: </label>
+              <input type="text" class="form-control" name="productAcreage"  [(ngModel)]="brokerPost.productAcreage" #productAcreage="ngModel" style = "margin-left: 16px;"/> -->
+               <!-- <span *ngIf="productAcreage.invalid">
+                  <span *ngIf="productAcreage.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productAcreage is required</span>
+                  <span *ngIf="productAcreage.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productAcreage sai do dai </span>
+               </span> -->
+             <!--  </div> -->
+
+              <!-- <div>
+                <span>Hình ảnh: </span><img src = "{{brokerPost.linkAnh}}">
+              </div> -->
+
+              <!-- <div>
+                <label for="name">Gioi tinh: </label>
+                <select name="sex" #sex style = "width: 9vw; margin-left: 72px; height: 4vw;" >
+                <option value="true" selected>Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Password: </label>
+              <input type="password" class="form-control" style = "width: 18vw; margin-left: 57px;" name="password"  [(ngModel)]="heroForm.form.password" #password="ngModel" required minlength="7" />
+               <span *ngIf="password.invalid">
+                  <span *ngIf="password.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Password is required</span>
+                  <span *ngIf="password.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Password do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">Confirm: </label>
+              <input type="password" class="form-control" style = "width: 18vw; margin-left: 72px;" name="confirmpassword"  [(ngModel)]="heroForm.form.confirmpassword" #confirmpassword="ngModel" required minlength="7" />
+               <span *ngIf="confirmpassword.invalid">
+                  <span *ngIf="confirmpassword.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm is required</span>
+                  <span *ngIf="confirmpassword.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Confirm do dai</span>
+               </span>
+              </div> -->
+
+           <!-- <div>
+                Hình ảnh: <img src = "{{brokerPost.linkAnh}}">
+              </div>
+
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success" style = "position: absolute; bottom: 40px; left: 250px;">Submit</button>
+        
+        <br>
+        <br>
+          </div>
+      </form>
+     
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,77 @@
+<h1 id="sum" style="display: none;">{{number}}</h1>
+    <div class="content">
+      <div class="content_detail">
+        <div class="content_detail_top">
+          <h4>Danh sách người môi giới</h4>
+          <form class="content_detail_top_form">
+            <input type="text" name="search" placeholder="Search...">&nbsp;
+            <select>
+              <option>Theo tên</option>
+              <option>Theo thuộc tính</option>
+            </select>&nbsp;
+            <input type="submit" name="submit" value="Search">
+          </form>
+          <a routerLink="../addlistbroker" class="btn2">Thêm môi giới</a>
+        </div>
+        <div class="content_detail_bottom">
+          <table class="danhsach">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Owner Name</th>
+                <th>Id Card</th>
+                <th>State</th>
+                <th>Name Admin</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="brokerAssigns">
+              <tr *ngFor="let eachBroker of brokerAssigns">
+                <td>{{eachBroker.id}}</td>
+                <td>{{eachBroker.ownerName}}</td>
+                <td>{{eachBroker.idCard}}</td>
+                <td *ngIf = "eachBroker.state == true">Đã đăng</td>
+                <td *ngIf = "eachBroker.state == false">Chưa đăng</td>
+                <td>{{eachBroker.nameAdmin}}</td>
+
+                <!-- <td>
+                  <a routerLink="../editlistbroker/{{eachBroker.id}}">Sửa</a>
+                  <a routerLink="../detaillistbroker/{{eachBroker.id}}">Chi tiết</a> -->
+                  <!--routerLink="/detaillistbroker" // (click)="onSelect(eachBroker)"-->
+                  <!-- <button (click)="delete(eachBroker.id)">X</button>
+                </td> -->
+              </tr>
+
+            </tbody>
+          </table>
+          <!--<div *ngIf="selectedBroker">
+        <h3>Name: {{selectedBroker.name}}</h3>
+      </div>-->
+          <div class="content_detail_bottom_page">
+            <!--<ul class="phantrang">
+          <a href="" title="">
+            <li id="phantrang_first">
+              <<</li> </a> <a href="" title="">
+            <li>1</li>
+          </a>
+          <a href="" title="">
+            <li>2</li>
+          </a>
+          <a href="" title="">
+            <li>3</li>
+          </a>
+          <a href="" title="">
+            <li>4</li>
+          </a>
+          <a href="" title="">
+            <li id="phantrang_last">>></li>
+          </a>
+        </ul>-->
+            <ul class="phantrang">
+              <li *ngFor="let p of pages; let i=index" style = "margin-bottom: 5px;">
+                <a href="#" (click)="setPage(i+1,$event)">{{i+1}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>

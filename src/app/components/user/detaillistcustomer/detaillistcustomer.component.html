@@ -1,0 +1,43 @@
+<div class="content" *ngIf="customer">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+        <h4>Chi tiết khách hàng</h4><br>
+        <hr>
+        <form>
+          <table>
+            <tr>
+              <td>ID: </td>
+              <td>{{customer.id}}</td>
+            </tr>
+            <tr>
+              <td>idCard: </td>
+              <td>{{customer.idCard}}</td>
+            </tr>
+            <tr>
+              <td>Họ tên: </td>
+              <td>{{customer.nameCustomer}}</td>
+            </tr>
+            <tr>
+              <td>Số điện thoại: </td>
+              <td>{{customer.phoneNumber}}</td>
+            </tr>
+            <tr>
+              <td>Ngày sinh: </td>
+              <td>{{customer.dayOfBirth}}</td>
+            </tr>
+            <tr>
+              <td>Mô tả: </td>
+              <td>{{customer.description}}</td>
+            </tr>
+            <tr>
+              <td><a routerLink="../../editlistcustomer/{{customer.id}}" class="btn2">Sửa</a></td>
+              <td><a (click)="delete(customer.id)" class="btn2">Xóa</a></td>
+            </tr>
+          </table>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

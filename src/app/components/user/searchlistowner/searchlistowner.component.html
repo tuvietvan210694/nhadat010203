@@ -1,0 +1,39 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <h4>Tìm kiếm Owners</h4>
+      <form class="content_detail_top_form">
+        <input type="text" #searchBox (keyup)="search(searchBox.value)" placeholder="Search...">&nbsp;
+        <!-- <input type="submit" name="submit" value="Search"> -->
+      </form>
+    </div>
+    <div class="content_detail_bottom">
+      <table class="danhsach">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Owner Name</th>
+            <th>Id Card</th>
+            <th>Phone Number</th>
+            <th>Thông tin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let owner of owners$ | async ">
+            <td>{{owner.id}}</td>
+            <td>{{owner.ownerName}}</td>
+            <td>{{owner.idCard}}</td>
+            <td>{{owner.phoneNumber}}</td>
+            <td><a routerLink = "../assignOwnerWithBroker/{{owner.id}}">Assign</a></td>
+            <!-- <td>
+              <a routerLink="../editlistcustomer/{{customer.id}}">Sửa</a>
+              <a routerLink="../detaillistcustomer/{{customer.id}}">Chi tiết</a>
+              <button (click)="delete(customer.id)">X</button>
+              <a routerLink="../detaillistcustomersearch/{{customer.id}}">Chỉ định</a>
+            </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

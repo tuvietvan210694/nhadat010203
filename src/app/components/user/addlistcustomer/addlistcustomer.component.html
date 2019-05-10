@@ -1,0 +1,38 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg1">
+      <h4>Thêm khách hàng</h4><br><hr>
+      <form action="" method="">
+        <table>
+          <tr>
+            <td>Số CMND</td>
+            <td><input type="text" #idCard  placeholder="Nhập số CMND..."></td>
+          </tr>
+          <tr>
+            <td>Họ tên</td>
+            <td><input type="text" #nameCustomer  placeholder="Nhập họ tên..."></td>
+          </tr>
+          <tr>
+            <td>Số điện thoại</td>
+            <td><input type="text" #phoneNumber placeholder="Nhập số điện thoại..."></td>
+          </tr>
+          <tr>
+            <td>Ngày sinh</td>
+            <td><input type="date" #dayOfBirth></td>
+          </tr>
+          <tr>
+            <td>Mô tả</td>
+            <td><input type="text" #description placeholder="Nhập mô tả..."></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" (click)="add(idCard.value,nameCustomer.value,phoneNumber.value,dayOfBirth.value,description.value);
+              idCard.value='';nameCustomer.value='';phoneNumber.value='';dayOfBirth.value='';description.value='';" value="Thêm"></td>
+          </tr>
+        </table>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

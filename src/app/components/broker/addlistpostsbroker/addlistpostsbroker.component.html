@@ -1,0 +1,390 @@
+<!-- <div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg1">
+      <h4>Thêm bài đăng</h4><br><hr>
+      <form action="" method="">
+        <table>
+          <tr>
+            <td>Loại đất</td>
+            <td>
+              <select name="type_land">
+                <option value="">Chọn loại đất</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Vị trí</td>
+            <td><input type="text" name="location" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Diện tích</td>
+            <td><input type="text" name="acreage" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Chủ sở hữu</td>
+            <td>
+              <input type="text" name="owner" placeholder="">
+            </td>
+          </tr>
+          <tr>
+            <td>Giá đất</td>
+            <td><input type="text" name="price_land" placeholder=""></td>
+          </tr>
+          
+          <tr>
+            <td>Mô tả</td>
+            <td>
+              <textarea rows="10" cols="33"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="reset" value="Reset"></td>
+            <td><input type="submit" value="Thêm"></td>
+          </tr>
+        </table>
+      </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <input id="name" class="form-control"
+      formControlName="name" required > -->
+
+<!-- <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <input type="file" (change)="onFileChanged($event)" #fileInput>
+        <br> -->
+
+
+<div class="all">
+  <div class="content">
+    <div class="formlg" style = "width: 850px;">
+      <br>
+      <h3 style = "margin-left: 100px; color: #007700;">Thêm bài đăng</h3>
+      <br>
+       <form (ngSubmit)="heroForm.form.valid && addPostBroker(productAcreage.value,productCost.value,productDescription.value, ward.value, productName.value,city.value + district.value + ward.value, currencyId.value,ownerId.value,catalogDetailId.value)" #heroForm="ngForm" name = "form">
+        <div *ngIf="heroForm.submitted && isLoginFailed" class="alert alert-danger">
+           {{errorMessage}}
+        </div>
+        <div *ngIf="heroForm.submitted && (!isLoginFailed)" class="alert alert-danger" style = "margin-left: 100px; width: 437px;">
+           {{mess}}
+        </div>
+
+       <!--  <input type="file" (change)="onFileChanged($event)" #fileInput> -->
+       
+       <input
+  type="file" (change)="onFileChanged($event)"
+  #fileInput style = "margin-left: 100px; color: #BB0000;">
+<!-- <button (click)="fileInput.click()">Select File</button> -->
+
+
+          <div class="form-group">
+            <div>
+              <label for="productAcreage"  style = "margin-left: 100px;">productAcreage: </label>
+              <input type="text" class="form-control" name="productAcreage"  [(ngModel)]="heroForm.form.productAcreage" #productAcreage="ngModel" required  style = "margin-left: 50px;"/>
+               <span *ngIf="productAcreage.invalid">
+                  <span *ngIf="productAcreage.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productAcreage is required</span>
+                  <!-- <span *ngIf="productAcreage.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productAcreage do dai phai it nhat 7 ki tu</span> -->
+               </span>
+              </div>
+
+              <div>
+              <label for="productCost"  style = "margin-left: 100px;">productCost: </label>
+              <input type="text" class="form-control" name="productCost"  [(ngModel)]="heroForm.form.productCost" #productCost="ngModel" required  style = "margin-left: 78px;"/>
+               <span *ngIf="productCost.invalid">
+                  <span *ngIf="productCost.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productCost is required</span>
+                  <!-- <span *ngIf="productCost.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productCost do dai phai it nhat 7 ki tu</span> -->
+               </span>
+              </div>
+
+              <div>
+              <label for="productDescription"  style = "margin-left: 100px;">productDescription: </label>
+              <input type="text" class="form-control" name="productDescription"  [(ngModel)]="heroForm.form.productDescription" #productDescription="ngModel" required minlength="7" style = "margin-left: 23px;"/>
+               <span *ngIf="productDescription.invalid">
+                  <span *ngIf="productDescription.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productDescription is required</span>
+                  <span *ngIf="productDescription.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productDescription do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div>
+
+              <!-- <div>
+              <label for="name">DateOfBirth: </label>
+              <input type="date" class="form-control" name="date"  [(ngModel)]="heroForm.form.date" #date="ngModel" required minlength="7" />
+               <span *ngIf="date.invalid">
+                  <span *ngIf="date.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth is required</span>
+                  <span *ngIf="date.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">DateOfBirth do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="name">productLocation: </label>
+              <input type="text" class="form-control" name="productLocation"  [(ngModel)]="heroForm.form.productLocation" #productLocation="ngModel" required minlength="7" />
+               <span *ngIf="productLocation.invalid">
+                  <span *ngIf="productLocation.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productLocation is required</span>
+                  <span *ngIf="productLocation.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productLocation sai do dai </span>
+               </span>
+              </div> -->
+
+              <div>
+              <label for="productName"  style = "margin-left: 100px;">productName: </label>
+              <input type="text" class="form-control" name="productName"  [(ngModel)]="heroForm.form.productName" #productName="ngModel" required minlength="7" style = "margin-left: 70px;"/>
+               <span *ngIf="productName.invalid">
+                  <span *ngIf="productName.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">productName is required</span>
+                  <span *ngIf="productName.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">productName sai do dai </span>
+               </span>
+              </div>
+
+             <!--  <div>
+              <label for="zipCode">zipCode: </label>
+              <input type="text" class="form-control" name="zipCode"  [(ngModel)]="heroForm.form.zipCode" #zipCode="ngModel" required minlength="7" />
+               <span *ngIf="zipCode.invalid">
+                  <span *ngIf="zipCode.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">zipCode is required</span>
+                  <span *ngIf="zipCode.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">zipCode sai do dai </span>
+               </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="currencyId">currencyId: </label>
+              <input type="text" class="form-control" name="currencyId"  [(ngModel)]="heroForm.form.currencyId" #currencyId="ngModel" required />
+               <span *ngIf="currencyId.invalid">
+                  <span *ngIf="currencyId.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">currencyId is required</span> -->
+                  <!-- <span *ngIf="currencyId.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">currencyId sai do dai </span> -->
+               <!-- </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="ownerId">ownerId: </label>
+              <input type="text" class="form-control" name="ownerId"  [(ngModel)]="heroForm.form.ownerId" #ownerId="ngModel" required />
+               <span *ngIf="ownerId.invalid">
+                  <span *ngIf="ownerId.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">ownerId is required</span> -->
+                  <!-- <span *ngIf="ownerId.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">ownerId sai do dai </span> -->
+               <!-- </span>
+              </div> -->
+
+              <!-- <div>
+              <label for="catalogDetailId">catalogDetailId: </label>
+              <input type="text" class="form-control" name="catalogDetailId"  [(ngModel)]="heroForm.form.catalogDetailId" #catalogDetailId="ngModel" required />
+               <span *ngIf="catalogDetailId.invalid">
+                  <span *ngIf="catalogDetailId.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">catalogDetailId is required</span> -->
+                  <!-- <span *ngIf="catalogDetailId.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">catalogDetailId sai do dai </span> -->
+               <!-- </span>
+              </div> -->
+
+              <div>
+                <label for="currencyId"  style = "margin-left: 100px;">CurrencyId: </label>
+                <select name="sex" #currencyId  style = "width: 18.5vw; margin-left: 90px; height: 3.5vw;">
+                <!-- <option value="true" selected>Nam</option>
+                <option value="false">Nữ</option> -->
+                <option *ngFor="let currency of currencys" value = "currency.id" [value]="currency.id">{{currency.currencyName}}</option>
+              </select>
+              </div>
+
+
+               <div>
+                <label for="ownerId"  style = "margin-left: 100px;">OwnerId: </label>
+                <select name="sex" #ownerId  style = "width: 18.5vw; margin-left: 111px; height: 3.5vw;">
+                <!-- <option value="true" selected>Nam</option>
+                <option value="false">Nữ</option> -->
+                <option *ngFor="let owner of owners"  [value]="owner.id">{{owner.id}}--{{owner.ownerName}}</option>
+              </select>
+              </div>
+
+
+
+              
+              <div>
+              <span style = "color: #770000; margin-left: 100px;">Type(*): </span>
+<select [(ngModel)]="selectedOptionCatalog" (change) = "changeOptionCatalog($event1)" class="stateSelect" name="stateSelect" style="width: 170px; margin-left: 121px;" class="catalog">
+   <option *ngFor="let o of catalogs" [value]="o.id" >
+      {{o.catalogName}}
+   </option>
+</select>
+</div>
+
+<div>
+  <span style = "color: #770000; margin-left: 100px;">TypeDetail(*): </span>
+<select [(ngModel)]="selectedOptionCatalogDetail" #catalogDetailId (change) = "changeOptionCatalogDetail($event1)" class="stateSelect" name="stateSelect" style="width: 170px; margin-left: 78px;" class = "catalog-detail">
+   <option *ngFor="let o of catalogdetails" [value]="o.id">
+      {{o.catalogDetailName}}
+   </option>
+</select>
+</div>
+
+
+
+<div>
+  
+  <span style = "color: #770000; margin-left: 100px;">City(*): </span>
+<select [(ngModel)]="selectedOption" #city = "ngModel" (change) = "changeOption($event1)" class="stateSelect zipcode1" name="stateSelect" style="width: 170px; margin-left: 129px;">
+   <option *ngFor="let o of citys" [value]="o.maCity">
+      {{o.nameCity}}
+   </option>
+</select>
+
+<span class = "canle">{{ selectedOption }}</span>
+<br>
+<!-- <button (click)="print()">Click me</button> -->
+
+<span style = "color: #770000; margin-left: 100px;">District(*): </span>
+<select [(ngModel)]="selected1Option" #district name="first"  (change) = "changeOptionWard($event1)" id = "abc" style = "width: 170px; margin-left: 107px;" class = "zipcode2">
+   <option *ngFor="let o of users1" [value]="o.maDistrict" >
+     {{ o.nameDistrict }}
+   </option>
+</select>
+<span class = "canle">{{ selected1Option }}</span>
+<br>
+
+<span style = "color: #770000; margin-left: 100px;">Ward(*): </span>
+<select [(ngModel)]="selected2Option" #ward = "ngModel" name="first" style = "width: 170px; margin-left: 118px;" class="zipcode3">
+   <option *ngFor="let o of wards1" [value]="o.maWard">
+      {{o.nameWard}}
+   </option>
+</select>
+<span class = "canle">{{ selected2Option }}</span>
+</div>
+
+
+
+
+
+
+
+<!-- 
+              <div>
+                <label for="name">Gioi tinh: </label>
+                <select name="sex" #sex style = "width: 10vw; height: 3vw;">
+                <option value="true" selected>Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+              </div>
+ -->
+              <!-- <div>
+              <label for="name">Password: </label>
+              <input type="password" class="form-control" style = "width: 17vw;" name="password"  [(ngModel)]="heroForm.form.password" #password="ngModel" required minlength="7" />
+               <span *ngIf="password.invalid">
+                  <span *ngIf="password.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Password is required</span>
+                  <span *ngIf="password.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Password do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div>
+ -->
+              <!-- <div>
+              <label for="name">ConfirmPassword: </label>
+              <input type="password" class="form-control" style = "width: 17vw;" name="confirmpassword"  [(ngModel)]="heroForm.form.confirmpassword" #confirmpassword="ngModel" required minlength="7" />
+               <span *ngIf="confirmpassword.invalid">
+                  <span *ngIf="confirmpassword.errors.required" style = "color: red; background-color: grey; margin-left: 1vw;">Confirmpassword is required</span>
+                  <span *ngIf="confirmpassword.errors.minlength" style = "color: red; background-color: grey; margin-left: 1vw;">Confirmpassword do dai phai it nhat 7 ki tu</span>
+               </span>
+              </div> -->
+
+
+
+          <br>
+          <br>
+          <button type="submit" class="btn btn-success" style = "margin-left: 100px;">Submit</button>
+          
+        <!-- <div *ngIf="heroForm.submitted" class="alert alert-danger">
+          Login successful: {{mess}}
+        </div>
+ -->
+
+        <br>
+        <br>
+          </div>
+
+        <!-- <table>
+          <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" #email placeholder="Nhập email..." required></td>
+            <td *ngIf="email.invalid">
+                <span *ngIf="email.errors.required">Email is required</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Tên</td>
+            <td><input type="text" name="name" #name placeholder="Nhập tên..."></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" name="address" #address placeholder="Nhập địa chỉ..."></td>
+          </tr>
+          <tr>
+            <td>Ngày sinh</td>
+            <td>
+              <input type="date" name="date" #date placeholder="Nhập ngày sinh...">
+            </td>
+          </tr>
+          <tr>
+            <td>Số điện thoại</td>
+            <td><input type="text" name="numberphone" #phonenumber placeholder="Nhập số điện thoại..."></td>
+          </tr>
+          <tr>
+            <td>Giới tính</td>
+            <td>
+              <select name="sex" #sex>
+                <option value="">Chọn giới tính</option>
+                <option value="true">Nam</option>
+                <option value="false">Nữ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Mật khẩu</td>
+            <td><input type="password" name="pass" #password placeholder="Nhập mật khẩu..."></td>
+          </tr>
+          <tr>
+            <td>Xác nhận mật khẩu</td>
+            <td><input type="password" name="confirmpass" #confirmpassword placeholder="Xác nhận mật khẩu..."></td>
+          </tr>
+          <tr>
+
+             <button type="submit" class="btn btn-success">Submit</button> -->
+            <!-- <td><button (click) = "signup(email.value, name.value, address.value, date.value, phonenumber.value, sex.value, password.value, confirmpassword.value)">Sign up</button></td> -->
+            <!-- <td><button>Reset</button></td> -->
+          <!-- </tr>
+        </table> -->
+      </form>
+     
+    </div>
+  </div>
+</div>

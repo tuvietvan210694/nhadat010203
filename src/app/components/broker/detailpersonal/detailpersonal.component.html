@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+      <h4 style = "margin-left: 18px; color: #007700;">Thông tin cá nhân</h4><hr>
+      <form>
+        <table *ngIf = "broker">
+          <tr>
+            <td class = "a">Email: </td>
+            <td>{{broker.email}}</td>
+          </tr>
+          <tr>
+            <td class = "a">Họ tên: </td>
+            <td>{{broker.nameBroker}}</td>
+          </tr>
+          <tr>
+            <td class = "a">Giới tính: </td>
+            <td>
+              <select name="sex" #sex style = "width: 10vw; height: 3vw;" >
+                <option *ngIf = "broker.gender === true">Nam</option>
+                <option *ngIf = "broker.gender === false">Nữ</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class = "a">Số điện thoại: </td>
+            <td>{{broker.phoneNumber}}</td>
+          </tr>
+          <tr>
+            <td class = "a">Đia chỉ: </td>
+            <td>{{broker.address}}</td>
+          </tr>
+          <tr>
+            <td class = "a">Ngày sinh: </td>
+            <td>{{broker.dateOfBirth}}</td>
+          </tr>
+          <tr>
+            <td class = "a">Hình ảnh:  </td>
+            <td><img src = {{broker.linkImageProfile}} width = "200" height = "200"/></td>
+          </tr>
+
+
+          <tr>
+            <td><a routerLink="../editpersonal" class="btn2">Chỉnh sửa</a></td>
+            <td><a routerLink="../changepasspersonal" class="btn2">Đổi mật khẩu</a></td>
+          </tr>
+        </table>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>

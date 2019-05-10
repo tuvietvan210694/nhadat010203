@@ -1,0 +1,98 @@
+<div class="content">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg1">
+
+        <h4>Thêm người môi giới</h4><br>
+        <hr>
+        <form action="" method="">
+          <!--<table>
+          <tr>
+            <td>Họ tên</td>
+            <td><input type="text" #name  placeholder="Nhập họ tên..."></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" (click)="add(name.value);
+              name.value=''" value="Thêm"></td>
+          </tr>
+        </table>-->
+          <table>
+            <tr>
+              <td>Họ tên</td>
+              <td><input type="text" #nameBroker placeholder="Nhập họ tên..."></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><input type="text" #emailBroker placeholder="Nhập email..."></td>
+            </tr>
+            <tr>
+              <td>Số điện thoại</td>
+              <td><input type="text" #numberphoneBroker placeholder="Nhập số điện thoại..."></td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td><input type="password" #passwordBroker placeholder="password..."></td>
+            </tr>
+            <tr>
+              <td>Ngày sinh</td>
+              <td><input type="date" #dateBroker></td>
+              
+            </tr>
+            <tr>
+              <td>Giới tính</td>
+              <td>
+                <select #sexBroker name="sex">
+                  <option value="">Chọn giới tính</option>
+                  <option value="true">Nam</option>
+                  <option value="false">Nữ</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>active</td>
+              <td>
+                <select #activeBroker name="sex">
+                  <option value="true">Có</option>
+                  <option value="false">Không</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>nonDel</td>
+              <!--<td>
+                <select #nonDelBroker>
+                  <option value="true">Có</option>
+                  <option value="false">Không</option>
+                </select>
+              </td>-->
+              <td>
+              <input type="radio"  #nonDelBroker value="true" checked />OK
+            </td>
+            </tr>
+            <tr>
+              <td>nonBlock</td>
+              <td>
+                <select #nonBlockBroker>
+                  <option value="true">Có</option>
+                  <option value="false">Không</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Địa chỉ</td>
+              <td><input type="text" #addressBroker placeholder="Nhập địa chỉ..."></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit"
+                  (click)="add(emailBroker.value,nameBroker.value,activeBroker.value,nonDelBroker.value,sexBroker.value,numberphoneBroker.value,addressBroker.value,dateBroker.value,passwordBroker.value,nonBlockBroker.value);
+                emailBroker.value='';nameBroker.value='';numberphoneBroker.value='';passwordBroker.value='';addressBroker.value='';dateBroker.value=''"
+                  value="Thêm"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

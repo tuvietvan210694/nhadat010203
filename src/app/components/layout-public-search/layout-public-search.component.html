@@ -1,0 +1,299 @@
+
+<!-- <div *ngIf="info.token; else loggedOut">
+  <h5 class="text-primary">Your Information</h5>
+  <p>
+    <strong>Username:</strong> {{info.username}}<br/>
+    <strong>Roles:</strong> {{info.authorities}}<br />
+    <strong>Token:</strong> {{info.token}}.
+  </p>
+  <button class="btn btn-secondary" (click)="logout()">Logout</button>
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../../../assets/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/styles/responsive.css">
+  <link rel="stylesheet" type="text/css" href="../../../assets/styles/reset.css">
+  <!-- <link rel="stylesheet" type="text/css" href = "./menu.css"> -->
+  <title>Service</title>
+</head>
+<body>
+  <header class="page-header">
+    <section class="header-top">
+      <div class="container crr">
+        <div class="logo-div crr">
+            <a href="#" alt="logo">
+              <img src="../../../assets/images/logo.jpg" />
+              <div class="logo-text">
+                <h1 class="text-format">TIGERS Company</h1>
+                <span>Housing - Broker</span>
+              </div>    
+            </a>
+        </div>
+        <div class="infor-contact crr">
+          <img src="../../../assets/images/icon-phone.png" alt="icon-phone"/>
+          <span class="contact-text">
+            <i class="question">&nbsp;Contact us?</i>
+            <h3 class="phone_number"> 05113941 977</h3>
+          </span>
+        </div>
+      </div>
+    </section>
+
+      <nav class="nav-menu crr">
+        <div class="container">
+          <!-- <ul class="menu-list crr">
+            
+            <li class="menu-item text-format"><a href="#">about us</a></li>
+            
+            <li class="menu-item text-format"><a>sign in</a></li>
+            <li class="menu-item text-format"><a>sign up</a></li>
+            <li class="menu-item text-format"><a href="#">consult &amp; contact</a></li>
+          </ul> bo menu vo day-->
+
+          
+          
+
+
+         <!--  <h1>TEST MENU TAI DAY...</h1> -->
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style = "text-align:center">
+   <h1>
+      Welcome to {{title}}.
+   </h1>
+</div> -->
+
+<!-- <div> Months :
+   <select (change) = "changemonths($event)">
+      <option *ngFor = "let i of months">{{i}}</option>
+   </select>
+</div> -->
+<!-- <br>
+<div> Months :
+   <select (change) = "changemonths($event)">
+      <option *ngFor = "let i of months1" [value] = "van"></option>
+   </select>
+</div> -->
+<!-- <br>
+<div> Months :
+   <select (change) = "changemonths($event)">
+      <option *ngFor = "let i of months2">{{i}}</option>
+   </select>
+</div>
+<br/> -->
+
+<!-- <div>
+   <span *ngIf = "isavailable; then condition1 else condition2">
+      Condition is valid.
+   </span>
+   <ng-template #condition1>Condition is valid</ng-template>
+   <ng-template #condition2>Condition is invalid</ng-template>
+</div> -->
+
+<!-- <button (click) = "myClickFunction($event)">Click Me</button>
+<h1>Vi du khac tai day</h1> -->
+
+
+
+<span style = "color: #770000;">City(*): </span>
+<select [(ngModel)]="selectedOption" (change) = "changeOption($event1)" class="stateSelect zipcode1" name="stateSelect" style="width: 170px; margin-left: 50px;">
+   <option *ngFor="let o of citys" [value]="o.maCity">
+      {{o.nameCity}}
+   </option>
+</select>
+
+<span class = "canle" style = "margin-left: 10px;">{{ selectedOption }}</span>
+<br>
+<!-- <button (click)="print()">Click me</button> -->
+
+<span style = "color: #770000;">District(*): </span>
+<select [(ngModel)]="selected1Option" name="first"  (change) = "changeOptionWard($event1)" id = "abc" style = "width: 170px; margin-left: 32px;" class = "zipcode2">
+   <option *ngFor="let o of users1" [value]="o.maDistrict" >
+     {{ o.nameDistrict }}
+   </option>
+</select>
+<span class = "canle" style = "margin-left: 10px;">{{ selected1Option }}</span>
+<br>
+
+<span style = "color: #770000;">Ward(*): </span>
+<select [(ngModel)]="selected2Option" name="first" style = "width: 170px; margin-left: 42px;" class="zipcode3">
+   <option *ngFor="let o of wards1" [value]="o.maWard">
+      {{o.nameWard}}
+   </option>
+</select>
+<span class = "canle" style = "margin-left: 10px;">{{ selected2Option }}</span>
+
+
+
+
+
+<br>
+<br>
+<button (click)="printAddress()" style="width: 5vw; background-color: #BBBBBB;">ZipCode</button>
+
+
+
+<span class = "canle1" style = "color: #770000; margin-left: 75px;">{{ address }}</span>
+<br>
+<br>
+<span style = "color: #770000;">Type(*): </span>
+<select [(ngModel)]="selectedOptionCatalog" (change) = "changeOptionCatalog($event1)" class="stateSelect" name="stateSelect" style="width: 170px; margin-left: 43px;" class="catalog">
+   <option *ngFor="let o of catalogs" [value]="o.id" >
+      {{o.catalogName}}
+   </option>
+</select>
+<!-- <span class = "canle">{{ selectedOptionCatalog }}</span> -->
+
+<br>
+<span style = "color: #770000;">TypeDetail(*): </span>
+<select [(ngModel)]="selectedOptionCatalogDetail" (change) = "changeOptionCatalogDetail($event1)" class="stateSelect" name="stateSelect" style="width: 170px; margin-left: 7px;" class = "catalog-detail">
+   <option *ngFor="let o of catalogdetails" [value]="o.id">
+      {{o.catalogDetailName}}
+   </option>
+</select>
+<!-- <span class = "canle">{{ selectedOptionCatalogDetail }}</span> -->
+
+<br>
+<br>
+<!-- <a routerLink = "/home">Search</a> -->
+<button (click) = "getPostPublic(selectedOptionCatalogDetail, selectedOption + selected1Option + selected2Option)" style="width: 5vw; background-color: #BBBBBB;">Search</button>
+
+<!-- <p>Selected option: {{ selectedOption }}</p>
+<p>Button output: {{ printedOption }}</p> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+          <ul class="social-list crr">
+            <li class="social-item">
+              <a href="#">
+                <img src="../../../assets/images/icon-youtube.png" alt="icon-youtube"/>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="#">
+                <img src="../../../assets/images/icon-google-plus.png" alt="icon-google-plus"/>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.facebook.com/van.viet.tu.0908" routerLink = "/admin">
+                <img src="../../../assets/images/icon-facebook.png" alt="icon-facebook"/>
+              </a>
+            </li> 
+          </ul>
+        </div>
+      </nav>
+  </header>
+  <main class="page-main">
+    <section class="section-breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumb-list crr">
+          <!-- <li class="breadcrumb-item text-format">
+            <a href="#"></a>
+          </li>
+          <span class="breadcrumb-item text-format">&nbsp;/&nbsp;</span> -->
+          <li class="breadcrumb-item text-format">
+            <span>Housing Broker</span>
+          </li>
+        </ul>
+    </div>
+    </section>
+    <section class="section-content">
+      <br>
+
+     <h1 class="service-list crr" *ngIf = "listPostPublic.length === 0" style="color: #770000;">
+         Không tìm thấy lô đất nào cả. 
+      </h1>
+
+
+
+
+      <ul class="service-list crr" *ngIf = "listPostPublic">
+          <li class="service-article" *ngFor = "let product of listPostPublic">
+            <div class="service-content">
+              <img src="{{product.linkAnh}}" alt="neck shoulder pain" style="width: 200px; height: 200px;"/>
+              <h3 class="item-title upper-first-letter"><a href="#">{{product.productName}}</a></h3>
+              <p class="upper-first-letter">{{product.productLocation}}</p>
+              <a href="#" routerLink = "/detailProduct/{{product.id}}"><span class="icon-arrow"></span></a>
+            </div>
+          </li>
+        </ul>
+      </section>
+   
+      <!-- <aside class="sidebar-left crr">
+        <ul class="service-category">
+          <li class="service-item ">
+            <div class="title-service text-format">
+              <h3>adults</h3>
+              <image src="../images/minus-math.png" class="icon-subb"/>
+            </div>
+            <ul class="service-element">
+              <li class="element-item"><a href="#" class="upper-first-letter">neck-shoulder-hand pain</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">spinal pain</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">disc hemiation</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">knee joint, hip joint</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">footsore</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">diseases of the musicles</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">perpheral neuropathy</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">traumatic sequelae</a></li>
+              <li class="element-item"><a href="#" class="upper-first-letter">sequelae of stroke</a></li>
+            </ul>
+          </li>
+          <li class="service-item">
+            <div class="title-service text-format" >
+              <h3>children</h3>
+              <image src="../images/plus-math.png" class="icon-subb"/>
+            </div>
+          </li>
+          <li class="book-service">
+            <div class="title-service text-format" >
+              <h3>book schedule</h3>
+            </div>
+            <div class="underline"></div>
+            <form action="" method="post" class="form-book">
+              <input type="text" name="fullname" id="fullname" placeholder="FULL NAME" value="" />
+              <input type="text" name="address" id="address" placeholder="ADDRESS" value="" />
+              <input type="text" name="phonenumber" id="phonenumber" placeholder="PHONE NUMBER" value="" />
+              <input type="text" name="time" id="time" placeholder="TIME" value="" />
+              <button type="submit">SEND</button>
+            </form>
+            </li>
+        </ul>
+      </aside> -->
+
+<!-- <router-outlet></router-outlet> -->
+      
+
+ <!-- <router-outlet></router-outlet> -->
+   
+  </main>
+  
+</body>
+</html>

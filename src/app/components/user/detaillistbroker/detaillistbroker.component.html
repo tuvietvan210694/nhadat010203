@@ -1,0 +1,83 @@
+<div class="content" *ngIf="broker">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+        <h4>Chi tiết người môi giới</h4><br>
+        <hr>
+        <form>
+            <table>
+                <tr>
+                  <td>Họ tên: </td>
+                  <td>{{broker.nameBroker}}</td>
+                </tr>
+                <tr>
+                  <td>Email: </td>
+                  <td>{{broker.email}}</td>
+                </tr>
+                <tr>
+                  <td>Số điện thoại: </td>
+                  <td>{{broker.phoneNumber}}</td>
+                </tr>
+                <tr>
+                  <td>Người sinh: </td>
+                  <td>{{broker.dateOfBirth}}</td>
+                </tr>
+                <tr>
+                  <td>Giới tính: </td>
+                  <td>{{broker.gender?'Nam':'Nữ'}}</td>
+                </tr>
+                <tr>
+                  <td>Tài khoản: </td>
+                  <td>{{broker.email}}</td>
+                </tr>
+                <tr>
+                  <td>Địa chỉ: </td>
+                  <td>{{broker.address}}</td>
+                </tr>
+                <tr>
+                  <td><a routerLink="../../editlistbroker/{{broker.id}}" class="btn2">Sửa</a></td>
+                  <td>
+                    <a (click)="delete(broker.id)" class="btn2">Xóa</a>
+                  </td>
+                </tr>
+              </table>
+          <!--<table>
+            <tr>
+              <td>Họ tên: </td>
+              <td>{{broker.nameBroker}}</td>
+            </tr>
+            <tr>
+              <td>Email: </td>
+              <td>{{broker.email}}</td>
+            </tr>
+            <tr>
+              <td>Số điện thoại: </td>
+              <td>{{broker.phoneNumber}}</td>
+            </tr>
+            <tr>
+              <td>Người sinh: </td>
+              <td>{{broker.dateOfBirth}}</td>
+            </tr>
+            <tr>
+              <td>Giới tính: </td>
+              <td>{{broker.gender?'Nam':'Nữ'}}</td>
+            </tr>
+            <tr>
+              <td>Tài khoản: </td>
+              <td>{{broker.email}}</td>
+            </tr>
+            <tr>
+              <td>Địa chỉ: </td>
+              <td>{{broker.address}}</td>
+            </tr>
+            <tr>
+              <td><a routerLink="/editlistbroker/{{broker.id}}" class="btn2">Sửa</a></td>
+              <td><a href="" class="btn2">Xóa</a></td>
+            </tr>
+          </table>-->
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

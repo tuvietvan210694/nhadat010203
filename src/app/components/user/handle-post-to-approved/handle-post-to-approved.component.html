@@ -1,0 +1,38 @@
+<div class="content" *ngIf="post">
+  <div class="content_detail">
+    <div class="content_detail_top">
+      <div class="formlg2">
+        <h2 style = "color: red;">Bạn đã phê duyệt bài đăng thành công!!!</h2>
+        <br>
+        <h4 style = "color: blue;">Chi tiết bài đăng</h4>
+        <form>
+          <table>
+            <tr>
+              <td>Tên sản phẩm: <span>{{post.productName}}</span></td>
+            </tr>
+            <tr>
+              <td>Vị trí: <span>{{post.productLocation}}</span></td>
+            </tr>
+            <tr>
+              <td>Diện tích: <span>{{post.productAcreage}} (m2)</span></td>
+            </tr>
+            <tr>
+              <td>Giá: <span>{{post.productCost}} (VNĐ)</span></td>
+            </tr>
+            <!-- <tr><td>{{post.linkAnh}}</td></tr> -->
+            <tr>
+              <td>Ảnh:<br> <span><img src="{{post.linkAnh}}" alt="" height="200px" width="250px"></span></td>
+            </tr>
+            <tr>
+              <td><a class="btn2">Đã Duyệt</a></td>
+            </tr>
+            <!-- <tr>
+              <td><a href="/handlePostToApproved/{{post.id}}" class="btn2">Duyệt</a></td>
+            </tr> -->
+          </table>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
